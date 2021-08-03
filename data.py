@@ -16,7 +16,7 @@ def get_json_reponse(file_name: str) -> dict:
         json_output.append({
             'lga_code': lga_code,
             'lga_name': lga_name,
-            'count': lga_total_test_count,
+            'total_count': lga_total_test_count,
             'greatest': {
                 'count': get_day_with_most_test(curr_lga_df)[0],
                 'date': get_day_with_most_test(curr_lga_df)[1]

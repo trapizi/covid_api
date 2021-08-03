@@ -21,7 +21,7 @@ def homepage():
 
 
 
-@routes.route('/data/api/', methods=['GET', 'POST'])
+@routes.route('/data/api/', methods=['GET'])
 def get_data():
     if request.method == 'GET':
         requesting_csv_file = './csv/{}'.format(request.args.get('file'))

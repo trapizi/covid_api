@@ -12,7 +12,7 @@ This COVID-19 API will receive a csv file from a client request, cleanse and agg
 2. Click [here](https://data.nsw.gov.au/data/dataset/60616720-3c60-4c52-b499-751f31e3b132/resource/945c6204-272a-4cad-8e33-dde791f5059a/download/pcr_testing_table1_location.csv) to download the csv file to your computer
 3. Run `py app.py` to start the server
 4. Go to the host link on the Flask terminal
-5. Upload the csv file that you just downloaded
+5. Upload the csv file that you just downloaded **OR** place the csv file in `/csv/` folder
 6. Go to path `/data/api/?file=pcr_testing_table1_location.csv` to get the JSON response
 
 
