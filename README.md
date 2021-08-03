@@ -13,7 +13,7 @@ This COVID-19 API will receive a csv file from a client request, cleanse and agg
 3. Run `py app.py` to start the server
 4. Go to the host link on the Flask terminal
 5. Upload the csv file that you just downloaded **OR** place the csv file in `/csv/` folder
-6. Go to path `/data/api/?file=pcr_testing_table1_location.csv` to get the JSON response
+6. Go to path `localhost:8080/data/api/?file=pcr_testing_table1_location.csv` to get the JSON response
 
 
 
@@ -21,7 +21,7 @@ This COVID-19 API will receive a csv file from a client request, cleanse and agg
 
 A test file is located in `/csv/testfile.csv` folder. 
 
-If you get the test JSON response (`/data/api/?file=testfile.csv`), you should expect to see:
+If you get the test JSON response (`localhost:8080/data/api/?file=testfile.csv`), you should expect to see:
 
 - Inner West (A) as lga with highest total test count, day with most tests on 2020-02-01 with 5 counts, day with least tests on 2020-01-01 with 2 counts
 - Ku-ring gai (A) and Strathfield (A) as lga(s) with second highest test count
