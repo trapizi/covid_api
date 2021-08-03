@@ -31,7 +31,6 @@ def get_json_reponse(file_name: str) -> dict:
 
 
 def process_data(df: pd.DataFrame):
-
     # lga_count DataFrame
     lga_count_df = df.groupby(['lga_code19', 'lga_name19']).size().to_frame('count').reset_index()
     lga_count_df = lga_count_df.sort_values(by=['count'], ascending=False)
