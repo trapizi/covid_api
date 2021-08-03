@@ -1,6 +1,8 @@
-from flask import request, Blueprint, render_template
+from flask import request, Blueprint, render_template, redirect, url_for
 import os.path
 from json import dumps
+
+from werkzeug.utils import redirect
 
 from data import get_json_reponse
 
@@ -15,16 +17,18 @@ UPLOAD_FOLDER = 'csv'
 def homepage():
     if request.method == 'POST':
         file = request.files['file']
-        file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+        try:
+            file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+            return redirect(url_for('routes.get_data', csv_file=file.filename))
+        except FileNotFoundError:
+            return render_template("index.html")
     return render_template('index.html')
 
 
-
-
-@routes.route('/data/api/', methods=['GET'])
-def get_data():
+@routes.route('/data/api/<csv_file>', methods=['GET'])
+def get_data(csv_file):
     if request.method == 'GET':
-        requesting_csv_file = './csv/{}'.format(request.args.get('file'))
+        requesting_csv_file = './csv/{}'.format(csv_file)
 
         if os.path.isfile(requesting_csv_file):
             output = get_json_reponse(requesting_csv_file)
