@@ -43,7 +43,7 @@ def process_data(df: pd.DataFrame):
     lga_count_df = df.groupby(['lga_code19', 'lga_name19']).size().to_frame('count').reset_index()
     lga_count_df = lga_count_df.sort_values(by=['count'], ascending=False)
 
-    # Test date count group by lga ans test date DataFrame
+    # Test date count group by lga and test date DataFrame
     test_date_count_df = df.groupby(['lga_code19','test_date']).size().to_frame('count').reset_index()
  
     return (lga_count_df, test_date_count_df)
