@@ -18,7 +18,7 @@ def get_json_reponse(file_name: str) -> dict:
         
         # Get df of current lga's test count for each test dates
         curr_lga_df = lga_test_df.loc[lga_test_df['lga_code19'] == lga_code]
-        lga_greatest_day_data = get_day_with_least_test(curr_lga_df)
+        lga_greatest_day_data = get_day_with_most_test(curr_lga_df)
         lga_least_day_data = get_day_with_least_test(curr_lga_df)
 
         json_output.append({
